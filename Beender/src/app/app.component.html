@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+  <h1>
+    Beender
+  </h1>
+  <nav>
+      <a routerLink="/upload" routerLinkActive="active">Upload</a>
+      <a routerLink="/timeline" routerLinkActive="active">Timeline</a>
+  </nav>
+  <div class="content">
+      <router-outlet></router-outlet>
+  </div>
+</div>
+
+
