@@ -1,4 +1,3 @@
-<div>
-  <day></day>
-  <!--<div *ngFor="let day of days">{{day}}</div>-->
+<div>  
+  <day *ngFor="let day of days" [day]="day">{{day}}</day>
 </div>

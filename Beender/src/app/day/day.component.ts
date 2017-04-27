@@ -9,9 +9,7 @@ import { Location } from "app/location";
 })
 export class DayComponent implements OnInit {
   @Input() day : Day
-  constructor() { 
-    var locations:Location[] = [new Location("Starbucks","Resturant","Place to drink expensive coffee")]
-    this.day = new Day("Day1",locations)
+  constructor() {     
   }
 
   ngOnInit() {

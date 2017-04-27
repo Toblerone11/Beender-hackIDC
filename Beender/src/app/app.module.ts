@@ -10,13 +10,14 @@ import { UploadPhotosComponent } from './upload-photos/upload-photos.component';
 import {ImageUploadModule } from '../../node_modules/angular2-image-upload/';
 import { TimelineComponent } from './timeline/timeline.component';
 import { DayComponent } from './day/day.component';
-import { ProfileComponent } from './profile/profile.component'
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component'
 
 const appRoutes: Routes = [
   { path: 'timeline', component: TimelineComponent },  
   {
     path: 'upload',
-    component: UploadPhotosComponent,
+    component: HomeComponent,
     data: { title: 'Upload' }
   },
   { path: '',
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     UploadPhotosComponent,
     TimelineComponent,
     DayComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
