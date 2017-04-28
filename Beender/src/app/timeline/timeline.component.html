@@ -6,9 +6,17 @@
       <div class="col-md-6">
         <day *ngFor="let day of timeline.days; let i = index" [title]="'Day '+(i+1).toString()" [day]="day"></day>
       </div>
-      <div class="col-md-6 fixed-right">
+      <div class="col-md-6 fixed-right">        
         <!--<h1 class="tl-title">You Have Beender</h1>-->
-        <sebm-google-map [latitude]="lat" [longitude]="lng">  
+        <sebm-google-map [latitude]="timeline.latitude" [longitude]="timeline.longitude">  
+           <sebm-google-map-marker *ngFor="let coord of timeline.coords;let i = index" [latitude]="coord[0]" [longitude]="coord[1]" [label]="i">             
+           </sebm-google-map-marker>
+           <!--<sebm-google-map-marker *ngFor="let m of markers; let i = index"
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [label]="m.label"
+          ></sebm-google-map-marker>-->
+           <!--<sebm-google-map-marker  [latitude]="37.651243" [longitude]="-119.721286"></sebm-google-map-marker>-->
         </sebm-google-map>
       </div>
     </div>
