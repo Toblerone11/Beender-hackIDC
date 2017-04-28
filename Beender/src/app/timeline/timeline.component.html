@@ -1,16 +1,28 @@
 <!--<script>window.scrollTo(0,0);</script>-->
 
 <body class="bd" background="assets\bitmap.png" *ngIf="timeline">
-  <div class="container">  
+  
+  <div class="container" >  
+    
     <div class="row">
+      
       <div class="col-md-6 tl-pics">
+        
+          <img class="profile_image" src="assets\ron_pick.png"/>
+        
+            <h1 class="pull-right tl_name">{{timeline.name}}</h1>
+        
         <day *ngFor="let day of timeline.days; let i = index" [title]="'Day '+(i+1).toString()" [day]="day"></day>
       </div>
-      <div class="col-md-6 fixed-right gmap">
+      <div class=" ">
+        
+        <div class="col-md-6 fixed-right gmap">
+          
         <sebm-google-map [latitude]="timeline.latitude" [longitude]="timeline.longitude">  
            <sebm-google-map-marker *ngFor="let coord of timeline?.coords;let i = index" [latitude]="coord[0]" [longitude]="coord[1]" [label]="i.toString()">             
            </sebm-google-map-marker>
         </sebm-google-map>
+        </div>
       </div>
     </div>
   </div>

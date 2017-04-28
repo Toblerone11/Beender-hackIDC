@@ -14,7 +14,7 @@
 }
 
 .tl-pics {
-  padding-top: 8px;
+  /*padding-top: 8px;*/
 }
 
 /*.bd {
@@ -27,3 +27,12 @@
 /*body {
   background-image: image-url('assets\nepal-1309205_960_720.jpg')
 }*/
+.profile_image {
+  width:100px;
+  height:100px;
+}
+.tl_name{
+  font-family: cursive;
+  color:#FF69B4;
+  text-align: center;
+}

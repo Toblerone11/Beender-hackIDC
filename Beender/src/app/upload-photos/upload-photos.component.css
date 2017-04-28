@@ -4,8 +4,9 @@ label.upload-button {
 
 .next-btn{
 	margin: auto;
-    width: 5%;
+    width: 150px;
     padding: 10px;
-	text-align: center;
+    /*margin-left:200px;*/
+	
 }
 
