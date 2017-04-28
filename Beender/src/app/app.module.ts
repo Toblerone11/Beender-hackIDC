@@ -14,9 +14,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component'
 import { UserService } from "app/user.service";
 import { AgmCoreModule, SebmGoogleMapMarker, SebmGoogleMap } from 'angular2-google-maps/core';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
   { path: 'timeline/:user_id/:timeline_id', component: TimelineComponent },  
+  { path: 'search', component: SearchComponent },  
   {
     path: 'upload',
     component: HomeComponent,
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     TimelineComponent,
     DayComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
