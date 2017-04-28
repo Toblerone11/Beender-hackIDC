@@ -1,15 +1,21 @@
-{{day.title}}
+<div class="day-title">
+  {{day.title}}
+</div>
 <div class="list-group">
   
   <div *ngFor="let loc of day.locations" class="">
     <div class="row thumbnail">
-      <h4 class="">{{loc.name}}</h4>
-      <img src="assets\pai_canyon2.jpg" class="col-md-4" > 
-      <p class="col-md-4">      
-        Type: {{loc.type}}
-        <br/>
-        Description: {{loc.description}}
-      </p>
+      
+      <div class="polaroid-images">
+        <img src="assets\pai_canyon2.jpg" class="">
+        <div class="img-container"> 
+          <h4 class="img-title">{{loc.name}}</h4>
+          <p class="img-count">1/3</p>
+          <p class="img-type">Type: {{loc.type}}</p> 
+          <p class="img-desc">Description: {{loc.description}}</p>  
+        </div>
+      </div>
+        
     </div>
   </div> 
   <!--<a href="#" class="list-group-item">
