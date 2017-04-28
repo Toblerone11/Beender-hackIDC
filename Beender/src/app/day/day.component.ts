@@ -8,11 +8,13 @@ import { Location } from "app/location";
   styleUrls: ['./day.component.css']
 })
 export class DayComponent implements OnInit {
-  @Input() day : Day
+  @Input() title : string 
+  @Input() day : Location[]
   constructor() {     
   }
 
   ngOnInit() {
+    // console.log(this.day)
   }
 
 }

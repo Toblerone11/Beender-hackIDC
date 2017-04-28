@@ -6,8 +6,7 @@
    "tl":[
       {
          "name":"San Fransisco",
-         "days":{
-            "day2":[
+         "days":[[
                {
                   "name":"Tunnel View",
                   "duration":null,
@@ -29,7 +28,7 @@
                   "pic":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Washburn_Point_Yosemite_August_2013_002.jpg/132px-Washburn_Point_Yosemite_August_2013_002.jpg"
                }
             ],
-            "day3":[
+            [
                {
                   "name":"Vernal Falls",
                   "duration":null,
@@ -41,7 +40,7 @@
                   "pic":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pinus_benthamiana_08558.JPG/150px-Pinus_benthamiana_08558.JPG"
                }
             ],
-            "day1":[
+            [
                {
                   "name":"Golden Gate Bridge",
                   "duration":null,
@@ -63,7 +62,7 @@
                   "pic":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/DSC_3890_-_panoramio.jpg/200px-DSC_3890_-_panoramio.jpg"
                }
             ]
-         }
+        ]
       }
    ]
 }

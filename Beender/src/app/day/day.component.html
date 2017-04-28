@@ -1,14 +1,15 @@
-{{day.title}}
+{{title}}
+GELLO
 <div class="list-group">
   
-  <div *ngFor="let loc of day.locations" class="">
+  <div *ngFor="let loc of day" class="">
     <div class="row thumbnail">
       <h4 class="">{{loc.name}}</h4>
       <img src="assets\pai_canyon2.jpg" class="col-md-4" > 
       <p class="col-md-4">      
-        Type: {{loc.type}}
+        Type: {{loc.category}}
         <br/>
-        Description: {{loc.description}}
+        Description: {{loc.desc}}
       </p>
     </div>
   </div> 

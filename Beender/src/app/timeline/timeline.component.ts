@@ -4,6 +4,7 @@ import { Location } from "app/location";
 import { UserService } from "app/user.service";
 import { ActivatedRoute,Params } from "@angular/router";
 import 'rxjs/add/operator/switchMap';
+import { Timeline } from "app/timeline";
 
 @Component({
   selector: 'app-timeline',
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
-   @Input() days : Day[] ;
+   @Input() timeline : Timeline ;
   lat: number = 51.678418;
   lng: number = 7.809007;
   constructor(private service: UserService,
@@ -25,7 +26,10 @@ export class TimelineComponent implements OnInit {
   
   ngOnInit() {
     this.route.params.subscribe((params: Params) => 
-         this.days = this.service.getTimeline(+params["user_id"],+params["timeline_id"]));
+         {
+           this.timeline = this.service.getTimeline(+params["user_id"],+params["timeline_id"]);
+           console.log(this.timeline)
+        });
   }
   
 
