@@ -6,7 +6,7 @@
       <div class="col-md-6">
         <day *ngFor="let day of timeline.days" [day]="day"></day>
       </div>
-      <div class="col-md-6 fixed-right">
+      <div class="col-md-6 fixed-right gmap">
         <!--<h1 class="tl-title">You Have Beender</h1>-->
         <sebm-google-map [latitude]="lat" [longitude]="lng">  
         </sebm-google-map>

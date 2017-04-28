@@ -34,16 +34,21 @@
 }*/
 
 .polaroid-images {
-    width: 100%;
+    width: 400px;
+    height: 250px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
 }
 
 .polaroid-images img {
-    width: 100%;
+    width: 400px;
+    height: 200px;
     }
 
 div.img-container {
+    width: 400px;
+    height: 600px;
     text-align: center;
     padding: 10px 20px;
 }
@@ -53,17 +58,23 @@ div.img-container {
 	width: inherit; 
 }*/
 
-/*.polaroid-images .img-title {
+.polaroid-images .img-title {
     text-align: left;
-    display:inline-block;
-    margin-right:10px;
+    float: left;
+    /*display:inline-block;
+    margin-right:10px;*/
 }
 
-.polaroid-images .img-count {
+.polaroid-images .img-desc {
+    text-align: left;
+    float: left;
+}
+
+.polaroid-images .img-type {
     text-align: right;
-    vertical-align: bottom;
     float: right;
-}*/
+    padding-top: 8px;
+}
 
 .day-title:hover {
     background: #FF1493;

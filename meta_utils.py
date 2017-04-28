@@ -19,6 +19,8 @@ PLACE_ADDRESS_FIELD = "PlaceAddress"
 PLACE_WEBSITE_FIELD = "PlaceWebsite"
 PLACE_DESC_FIELD = "PlaceDescription"
 PLACE_IMAGE_FIELD = "PlaceImage"
+PLACE_LAT_FIELD = "PlaceLat"
+PLACE_LON_FIELD = "PlaceLon"
 
 
 def prepare_data(meta_list):
@@ -95,7 +97,10 @@ def generate_metas_by_place(meta_list):
     yield metas
 
 def create_timeline_obj(meta_list):
-    timeline = []
+    timeline = {}
+    timeline["days"] = []
+    timeline["meanLon"] = sum([x[PLACE_LON_FIELD]  for x in meta_list]) / float(len(meta_list))
+    timeline["meanLat"] = sum([x[PLACE_LAT_FIELD] for x in meta_list]) / float(len(meta_list))
     day_index = 1
     for day_metas in generate_metas_by_days(meta_list):
         day_obj = {}
@@ -105,6 +110,8 @@ def create_timeline_obj(meta_list):
         for place_metas in generate_metas_by_place(day_metas):
             place_obj = {}
             place_obj["category"] = place_metas[0][PLACE_CATEGORY_FIELD]
+            place_obj["lon"] = place_metas[0][PLACE_LON_FIELD]
+            place_obj["lat"] = place_metas[0][PLACE_LAT_FIELD]
             place_obj["name"] = place_metas[0][PLACE_NAME_FIELD]
             place_obj["address"] = place_metas[0][PLACE_ADDRESS_FIELD]
             place_obj["description"] = place_metas[0][PLACE_DESC_FIELD]
@@ -115,14 +122,14 @@ def create_timeline_obj(meta_list):
             places.append(place_obj)
 
         day_obj["places"] = places
-        timeline.append(day_obj)
+        timeline["days"].append(day_obj)
         day_index += 1
     
     return timeline
 
 if __name__ == "__main__":
-    in_dir = r"C:\D\hackIDC\Beender-hackIDC\image_meta_data"
-    out_dir = r"C:\D\hackIDC\Beender-hackIDC\timelines"
+    in_dir = "image_meta_data"
+    out_dir = "timelines"
 
     for meta_file in os.listdir(in_dir):
         print meta_file
