@@ -4,6 +4,7 @@ import scipy.cluster.hierarchy as hcluster
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import re
 
 LAT_FIELD = "Lat"
 LNG_FIELD = "Lon"
@@ -21,6 +22,8 @@ PLACE_DESC_FIELD = "PlaceDescription"
 PLACE_IMAGE_FIELD = "PlaceImage"
 PLACE_LAT_FIELD = "PlaceLat"
 PLACE_LON_FIELD = "PlaceLon"
+
+SENTENCE_ENS_PATT = re.compile("\.(?:\s+|$)")
 
 
 def prepare_data(meta_list):
@@ -81,6 +84,8 @@ def generate_metas_by_days(meta_list):
     
     yield metas
 
+def get_short_descript(full_desc):
+    return SENTENCE_ENS_PATT.split(full_desc)[0]
 
 def generate_metas_by_place(meta_list):
     prev_place = meta_list[0][PLACE_NAME_FIELD]
@@ -90,10 +95,10 @@ def generate_metas_by_place(meta_list):
         if place != prev_place:
             yield metas
             metas = []
-        
+
         metas.append(meta)
         prev_place = place
-    
+
     yield metas
 
 def create_timeline_obj(meta_list):
@@ -114,7 +119,7 @@ def create_timeline_obj(meta_list):
             place_obj["lat"] = place_metas[0][PLACE_LAT_FIELD]
             place_obj["name"] = place_metas[0][PLACE_NAME_FIELD]
             place_obj["address"] = place_metas[0][PLACE_ADDRESS_FIELD]
-            place_obj["description"] = place_metas[0][PLACE_DESC_FIELD]
+            place_obj["description"] = get_short_descript(place_metas[0][PLACE_DESC_FIELD])
             place_obj["website"] = place_metas[0][PLACE_WEBSITE_FIELD]
             place_obj["image"] = place_metas[0][PLACE_IMAGE_FIELD]
             place_obj["start_time"] = place_metas[0][TIME_FIELD]
