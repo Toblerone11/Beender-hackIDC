@@ -1,0 +1,11 @@
+.search-bg {
+    /*background-color: #666;*/
+    background-image: url("../../assets/26.jpg");
+    /*background-image: url("../../assets/city1.jpg");*/
+    
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: auto;
+    display:block;
+}
