@@ -12,10 +12,11 @@ import 'rxjs/add/operator/switchMap';
 })
 export class TimelineComponent implements OnInit {
    @Input() days : Day[] ;
-
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor(private service: UserService,
               private route: ActivatedRoute ) {
-                
+              
     // (+) converts string 'id' to a number
        
        
@@ -26,5 +27,6 @@ export class TimelineComponent implements OnInit {
     this.route.params.subscribe((params: Params) => 
          this.days = this.service.getTimeline(+params["user_id"],+params["timeline_id"]));
   }
+  
 
 }

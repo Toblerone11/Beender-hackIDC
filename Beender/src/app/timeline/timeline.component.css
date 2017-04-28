@@ -1,0 +1,9 @@
+.sebm-google-map-container {
+  height: 300px;
+  /*height: 100%;*/
+  /*width: 300px;*/
+}
+.fixed-right{
+    position:fixed;
+    right: 10px;
+}
