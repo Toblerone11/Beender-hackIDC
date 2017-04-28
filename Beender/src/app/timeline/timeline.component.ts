@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Day } from "app/day";
 import { Location } from "app/location";
+import { UserService } from "app/user.service";
+import { ActivatedRoute,Params } from "@angular/router";
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-timeline',
@@ -10,18 +13,18 @@ import { Location } from "app/location";
 export class TimelineComponent implements OnInit {
    @Input() days : Day[] ;
 
-  constructor() { 
-    var locations:Location[] = [new Location ("Starbucks","Resturant","Place to drink expensive coffee"),
-    new Location ("Fun attraction","Funland","Have some funny fun")]
-    this.days = []
-    for (var i = 0; i < 5; i++) {
-      var day = new Day("Day"+i.toString(),locations);
-      this.days.push(day)
-    }
-    
+  constructor(private service: UserService,
+              private route: ActivatedRoute ) {
+                
+    // (+) converts string 'id' to a number
+       
+       
+    // alert(service.getUser())            
   }
   
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => 
+         this.days = this.service.getTimeline(+params["user_id"],+params["timeline_id"]));
   }
 
 }

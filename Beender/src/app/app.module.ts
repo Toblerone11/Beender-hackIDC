@@ -12,9 +12,10 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { DayComponent } from './day/day.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component'
+import { UserService } from "app/user.service";
 
 const appRoutes: Routes = [
-  { path: 'timeline', component: TimelineComponent },  
+  { path: 'timeline/:user_id/:timeline_id', component: TimelineComponent },  
   {
     path: 'upload',
     component: HomeComponent,
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
