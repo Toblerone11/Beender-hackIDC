@@ -1,14 +1,11 @@
-.image-upload {
-border: 0;
+label.upload-button { 
+    background-color: yellow !important;
 }
-.file-upload {
-background: 0;
+
+.next-btn{
+	margin: auto;
+    width: 5%;
+    padding: 10px;
+	text-align: center;
 }
-.drag-box-message {
-display: none;
-}
-.upload-button {
-float: none !important;
-display: block !important;
-text-align: center;
-}
+

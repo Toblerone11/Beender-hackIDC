@@ -4,7 +4,7 @@
   <div class="container">  
     <div class="row">
       <div class="col-md-6">
-        <day *ngFor="let day of timeline.days" [day]="day"></day>
+        <day *ngFor="let day of timeline.days; let i = index" [title]="'Day '+(i+1).toString()" [day]="day"></day>
       </div>
       <div class="col-md-6 fixed-right">
         <!--<h1 class="tl-title">You Have Beender</h1>-->
