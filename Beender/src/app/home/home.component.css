@@ -8,6 +8,7 @@
     
 }
 
+
 .center-banner {
     text-align: center;
     vertical-align: middle;
@@ -22,7 +23,7 @@
 .bg-1 {
     margin: 0 auto 0 auto;
     /* The image used */
-    background-image: url("../../assets/feet-1.jpg");
+    background-image: url("../../assets/nepal-1309205_960_720.jpg");
     /*background-image: url("../../assets/island.jpg");*/
     /* Set a specific height */
     height: 500px; 
@@ -32,7 +33,7 @@
 .bg-2 {
     /* The image used */
     /*background-image: url("../../assets/island.jpg");*/
-    background-image: url("../../assets/wall-3.jpg");
+    background-image: url("../../assets/wix.png");
     /* Set a specific height */
     height: 500px; 
 
@@ -40,9 +41,10 @@
 .bg-3 {
     /* The image used */
     /*background-image: url("../../assets/island.jpg");*/
-    background-image: url("../../assets/wall-3.jpg");
+    /*background-image: url("../../assets/wix.png");*/
     /* Set a specific height */
-    height: 500px; 
+    /*height: 500px;*/
+		/*width:1024px;*/
 
 }
 .half-img {

@@ -14,7 +14,9 @@ export class Location {
        public time:string;
      public url: string;
      public loc:string;
-      public pic:string
+      public pic:string;
+      public lat:number;
+      public lot:number;
      constructor(obj:any) {
          this.name = obj.name;
          this.category = obj.category;
@@ -25,6 +27,8 @@ export class Location {
         this.url = obj.url;
         this.loc = obj.loc;
         this.pic = obj.pic;
+        this.lat = +obj.lat;
+        this.lot = +obj.lot;
 
       }
 }

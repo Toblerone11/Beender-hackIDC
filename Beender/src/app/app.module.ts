@@ -13,7 +13,7 @@ import { DayComponent } from './day/day.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component'
 import { UserService } from "app/user.service";
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule, SebmGoogleMapMarker, SebmGoogleMap } from 'angular2-google-maps/core';
 
 const appRoutes: Routes = [
   { path: 'timeline/:user_id/:timeline_id', component: TimelineComponent },  
@@ -46,7 +46,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDc8UxD7glWG3sVr-Dopt_RRxhcesdAx-0'
-    })
+    }),
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
