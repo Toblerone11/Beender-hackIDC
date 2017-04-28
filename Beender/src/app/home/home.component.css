@@ -1,0 +1,57 @@
+.parallax { 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+.center-banner {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 0px;
+    /*height: 100%;*/
+    line-height: 250px;
+    font-size: 100px;
+    font-family: verdana,geneva,sans-serif;
+    color: white;
+ }
+
+.bg-1 {
+    margin: 0 auto 0 auto;
+    /* The image used */
+    background-image: url("../../assets/feet-1.jpg");
+    /*background-image: url("../../assets/island.jpg");*/
+    /* Set a specific height */
+    height: 500px; 
+    opacity: .8;
+
+}
+.bg-2 {
+    /* The image used */
+    /*background-image: url("../../assets/island.jpg");*/
+    background-image: url("../../assets/wall-3.jpg");
+    /* Set a specific height */
+    height: 500px; 
+
+}
+.bg-3 {
+    /* The image used */
+    /*background-image: url("../../assets/island.jpg");*/
+    background-image: url("../../assets/wall-3.jpg");
+    /* Set a specific height */
+    height: 500px; 
+
+}
+.half-img {
+    /*background-image: url("../../assets/island.jpg");*/
+    /*height: 100%;*/
+    /*background-position: center;*/
+    background-size: cover;
+    object-fit: cover;
+    max-width: 200%;
+    max-height: 200%;
+}
+
